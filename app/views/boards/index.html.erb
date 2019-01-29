@@ -16,7 +16,7 @@
   <tbody>
     <% @boards.each do |board| %>
       <tr>
-        <td><%= board.image %></td>
+        <td><%= image_tag(board.image.thumb.url) %></td>
         <td><%= board.category %></td>
         <td><%= board.status %></td>
         <td><%= board.user_id %></td>

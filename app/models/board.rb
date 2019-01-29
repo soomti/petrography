@@ -1,3 +1,3 @@
 class Board < ActiveRecord::Base
-  belong-to :user
+  belongs_to :user
 end

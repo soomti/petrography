@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# image upload
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
 # sign up 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

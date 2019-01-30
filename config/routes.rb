@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :boards
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'user/registrations', sessions: 'user/sessions', passwords: 'user/passwords' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

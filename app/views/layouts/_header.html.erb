@@ -3,28 +3,11 @@
     <div class="container-fluid nav-header-container">
       <div class="row">
         <div class="col-md-2 col-xs-5">
-          <a href="/" title="Pofo" class="logo"><img src="<%= image_path("icon.png") %>" class="logo-dark default" alt="Pofo">
-          <img src="images/logo-white.png" data-rjs="images/logo-white@2x.png" alt="Pofo" class="logo-light"></a>
+          <a href="/" title="petrography" class="logo">
+            <img src="<%= image_path("icon.png") %>" class="logo-dark default" alt="logo">
+          </a>
         </div>
-        <div class="col-md-7 col-xs-2 width-auto pull-right accordion-menu xs-no-padding-right">
-          <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
-            <ul id="accordion" class="nav navbar-nav navbar-left no-margin alt-font text-normal" data-in="fadeIn" data-out="fadeOut">
-              <li class="dropdown megamenu-fw">
-                  <a href="/">Home</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-              </li>
-              <li class="dropdown simple-dropdown">
-                <a href="/boards">boards</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-              </li>
-              <li class="dropdown megamenu-fw">
-                  <a href="/users/sign_up">upload</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-              </li>
-              <li class="dropdown megamenu-fw">
-                  <a href="/users/sign_in">login</a><i class="fas fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-2 col-xs-5 width-auto"></div>
+        <%= render 'layouts/header/menu'%>
       </div>
     </div>
   </nav>

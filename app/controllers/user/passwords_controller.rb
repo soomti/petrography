@@ -2,9 +2,11 @@
 
 class User::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    @title = "Forgot your password?"
+    @path = "/devise/layouts/devise_form_password"
+    super
+  end
 
   # POST /resource/password
   # def create

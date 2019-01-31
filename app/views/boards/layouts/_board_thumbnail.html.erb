@@ -1,32 +1,31 @@
 <section class="wow fadeIn padding-90px-top sm-padding-50px-top xs-padding-30px-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 no-padding xs-padding-15px-lr">
-        <div class="filter-content overflow-hidden">
-            <ul class="portfolio-grid work-3col hover-option4 gutter-medium">
-              <li class="grid-sizer"></li>
-              <% @boards.each do |board| %>
-              <li class="grid-item cat branding design wow fadeInUp">
-                <a href="single-project-page-01.html">
-                  <figure>
-                    <div class="portfolio-img bg-extra-dark-gray"><img src="<%= image_path(board.image)%>" alt=""/></div>
-                    <figcaption>
-                      <div class="portfolio-hover-main text-center">
-                        <div class="portfolio-hover-box vertical-align-middle">
-                            <div class="portfolio-hover-content position-relative">
-                                <div class="bg-deep-pink center-col separator-line-horrizontal-medium-light3 margin-25px-bottom"></div>
-                                <span class="font-weight-600 letter-spacing-1 alt-font text-white text-uppercase margin-5px-bottom display-block">Herbal Beauty Salon</span>
-                                <p class="text-medium-gray text-uppercase text-extra-small no-margin-bottom">Branding and Identity</p>
-                            </div>
-                        </div>
+  <div class="row">
+    <div class="col-md-12 no-padding xs-padding-15px-lr">
+      <div class="filter-content overflow-hidden">
+          <ul class="portfolio-grid work-3col hover-option4 gutter-medium">
+            <li class="grid-sizer"></li>
+            <% @boards.each do |board| %>
+            <li class="grid-item cat branding design wow fadeInUp">
+              <a href="/boards/<%=board.id%>">
+                <figure>
+                  <div class="portfolio-img bg-extra-dark-gray"><img src="<%= image_path(board.image)%>" alt=""/></div>
+                  <figcaption>
+                    <div class="portfolio-hover-main text-center">
+                      <div class="portfolio-hover-box vertical-align-middle">
+                          <div class="portfolio-hover-content position-relative">                    
+                              <div class="bg-deep-pink center-col separator-line-horrizontal-medium-light3 margin-25px-bottom">
+                              </div>
+                              <span class="font-weight-600 letter-spacing-1 alt-font text-white text-uppercase margin-5px-bottom display-block"><%= board.user.nickname %></span>
+                              <p class="text-medium-gray text-uppercase text-extra-small no-margin-bottom">-</p>
+                          </div>
                       </div>
-                    </figcaption>
-                  </figure>
-                </a>
-              </li>   
-              <% end %>
-            </ul>
-        </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>   
+            <% end %>
+          </ul>
       </div>
     </div>
   </div>

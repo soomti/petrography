@@ -2,7 +2,6 @@
   <% if @board.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@board.errors.count, "error") %> prohibited this board from being saved:</h2>
-
       <ul>
       <% @board.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,18 +11,36 @@
   <% end %>
   <div class="field">
     <%= f.label :category %><br>
-    <div class="select-style small-select">
+    <div class="select-style board-select">
       <%= select :board, :category, @board_category, class: "bg-transparent no-margin-bottom" %>
     </div>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image, class: "big-input"%>
+    <%= f.file_field :image, class: "big-input", id: "board-image"%>
   </div>
   <div class="field">
-    <%= f.hidden_field :user_id, value: current_user %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   </div>
   <div class= "actions" >
     <%= f.submit  :submit, class: " btn btn-black btn-extra-large width-100 md-padding-15px-bottom sm-display-table sm-margin-lr-auto",style: "width:100%;" %>
   </div>
 <% end %>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $("#board-image").on('change', function(){
+        readURL(this);
+    });
+  });
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+      $('body').attr('background', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>

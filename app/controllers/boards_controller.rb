@@ -14,7 +14,10 @@ class BoardsController < ApplicationController
 
   # GET /boards/new
   def new
+    @title = "UPLOAD YOUR PET"
     @board = Board.new
+    @board_category = BoardsHelper.get_category
+    @path = '/boards/layout/'
   end
 
   # GET /boards/1/edit

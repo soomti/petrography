@@ -4,8 +4,8 @@
       <%= render '/devise/layouts/devise_title'%>
     </div>
     <div class="devise-form col-md-10 center-col">
-      <%= render 'form' %>
-      <%= link_to 'Back', boards_path %>
+      <%= render @path %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </section>

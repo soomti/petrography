@@ -9,8 +9,14 @@
     <li class="dropdown megamenu-fw text-deep-pink">
       <a href="/boards/new"><p class="text-deep-pink">submit a photo</p></a>
     </li>
+    <% unless current_user %>
     <li class="dropdown megamenu-fw">
-      <a href="/users/sign_in">login</a>
+        <%= link_to('Login', new_user_session_path)  %>
     </li>
+    <% else %>
+    <li class="dropdown megamenu-fw">
+       <%= link_to("Hello #{current_user.nickname}!!", destroy_user_session_path, method: :delete) %>  
+    </li>      
+    <% end%>
   </ul>
 </div>

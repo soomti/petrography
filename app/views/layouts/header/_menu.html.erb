@@ -6,17 +6,20 @@
     <li class="dropdown megamenu-fw">
       <a href="/boards">boards</a>
     </li>
-    <li class="dropdown megamenu-fw text-deep-pink">
+    <li class="dropdown megamenu-fw text-deep-pink wow">
       <a href="/boards/new"><p class="text-deep-pink">submit a photo</p></a>
     </li>
     <% unless current_user %>
-    <li class="dropdown megamenu-fw">
+    <li class="dropdown megamenu-fw wow">
         <%= link_to('Login', new_user_session_path)  %>
     </li>
     <% else %>
-    <li class="dropdown megamenu-fw">
-       <%= link_to("Hello #{current_user.nickname}!!", destroy_user_session_path, method: :delete) %>  
+    <li class="dropdown megamenu-fw wow">
+       <%= link_to("#{current_user.nickname}", "/") %>  
     </li>      
+    <li class="dropdown megamenu-fw wow">
+       <%= link_to("Logout", destroy_user_session_path, method: :delete,id: "logout") %>  
+    </li>  
     <% end%>
   </ul>
 </div>

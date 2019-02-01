@@ -5,7 +5,13 @@ class Board < ActiveRecord::Base
   validates_processing_of :image
   validate :image_size_validation
  
-private
+  enum category: {
+    cat: 1,
+    dog: 2,
+    etc: 99
+  }
+  
+  private
   def image_size_validation
     errors[:image] << "should be less than 100MB" if image.size > 100.megabytes
   end

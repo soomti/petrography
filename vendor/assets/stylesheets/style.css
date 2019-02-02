@@ -3014,12 +3014,12 @@ header.sticky nav.navbar.brand-center ul.nav > li > a {padding: 20px; margin: 0 
 .hover-option10 .grid-item figure .portfolio-hover-content{ position: relative; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); -moz-transform: translateY(100%); transform: translateY(100%);}
 .hover-option10 .grid-item figure:hover .portfolio-icon, .hover-option10 .grid-item figure:hover .portfolio-hover-content { -webkit-transform: translateY(0); -ms-transform: translateY(0); -moz-transform: translateY(0); transform: translateY(0); }
 .hover-option10 .grid-item .portfolio-icon a {margin: 0 7px; height: 50px; width: 50px; display: inline-block; border-radius: 100%; border: 2px solid rgba(255,255,255,1); box-sizing: border-box; vertical-align: top; text-align:center; color: #fff}
-.hover-option10 .grid-item .portfolio-icon a:hover {color: #232323; background: #fff; border-radius: 5px;}
-.hover-option10 .grid-item .portfolio-icon a:hover i {color: #232323;;}
-.hover-option10 .grid-item .portfolio-icon i.fa-link {font-size:22px; position: relative; top: 14px}
-.hover-option10 .grid-item .portfolio-icon i.fa-search {font-size:20px; position: relative; top: 13px}
-.container .hover-option10 .grid-item .portfolio-icon i.fa-link {font-size:16px; position: relative; top: 10px}
-.container .hover-option10 .grid-item .portfolio-icon i.fa-search {font-size:14px; position: relative; top: 8px}
+.hover-option10 .grid-item .portfolio-icon a:hover {color: #fff; background: #fff; border-radius: 5px;}
+.hover-option10 .grid-item .portfolio-icon a:hover i {color: #ff214f;;}
+.hover-option10 .grid-item .portfolio-icon i.fa-heart{font-size:20px; position: relative; top: 14px}
+.hover-option10 .grid-item .portfolio-icon i.fa-bookmark {font-size:20px; position: relative; top: 13px}
+.container .hover-option10 .grid-item .portfolio-icon i.fa-heart {font-size:14px; position: relative; top: 10px}
+.container .hover-option10 .grid-item .portfolio-icon i.fa-bookmark {font-size:14px; position: relative; top: 8px}
 .container .hover-option10 .grid-item .portfolio-icon a {width: 45px; height: 45px;}
 .container .hover-option10 .grid-item figure .portfolio-hover-main {padding: 30px;}
 

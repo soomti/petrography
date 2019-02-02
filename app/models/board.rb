@@ -4,12 +4,6 @@ class Board < ActiveRecord::Base
 
   validates_processing_of :image
   validate :image_size_validation
- 
-  enum category: {
-    cat: 1,
-    dog: 2,
-    etc: 99
-  }
   
   private
   def image_size_validation

@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   has_many :boards
   has_many :likes
+
+  def is_like?(board)
+    Like.find_by(user_id: self.id, board_id: board.id).present?
+  end
+  
 end

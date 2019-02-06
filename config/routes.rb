@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
-  resources :boards
+  resources :boards do
+    post '/like', to: 'likes#like_toggle'
+  end
+
   devise_for :users, controllers: { registrations: 'user/registrations', sessions: 'user/sessions', passwords: 'user/passwords' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

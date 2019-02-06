@@ -22,10 +22,3 @@
 
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
-
-
-  <% if current_user.is_like?(@board) %>
-    <%= link_to '취소', boards_like_path(@board), method: 'post' %>
-  <% else %>
-    <%= link_to '좋아용', boards_like_path(@board), method: 'post' %>
-  <% end %>

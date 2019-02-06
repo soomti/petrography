@@ -2,7 +2,14 @@
 <%= render 'boards/layouts/board_category_list'%>
 <%= render 'boards/layouts/board_thumbnail.html.erb'%>  
 
+<% @boards.each do |board| %>
+  <%= image_tag (board.image) %>
+  <% if current_user.is_like?(board) %>
+    <%= link_to "좋아요 취소#{board.likes.count}", board_like_path(board), method: "post", remote: true, id: "result" %>
+  <% else %>
+    <%= link_to "좋아요#{board.likes.count}", board_like_path(board), method: "post", remote: true, id: "result" %>
+  <% end %>
+
+<% end %>
 <!-- end portfolio section -->
 <!-- start call to action section -->
-
-

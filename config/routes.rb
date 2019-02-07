@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
+  get '/mypage' => 'mypages#index'
+  get '/my_board' => 'mypages#my_board'
+  get '/my_like' => 'mypages#my_like'
+
   resources :boards do
     post '/like', to: 'likes#like_toggle'
   end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/mypage' => 'mypages#index'
   get '/my_board' => 'mypages#my_board'
+  get '/my_board/delete' => 'mypages#my_board_delete'
   get '/my_like' => 'mypages#my_like'
 
   resources :boards do

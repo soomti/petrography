@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   before_action :set_board, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /boards
   # GET /boards.json
   def index
@@ -14,7 +14,10 @@ class BoardsController < ApplicationController
 
   # GET /boards/new
   def new
+    @title = "UPLOAD YOUR PET"
     @board = Board.new
+    @board_category = BoardsHelper.get_category
+    @path = '/boards/layout/'
   end
 
   # GET /boards/1/edit
@@ -28,7 +31,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
+        format.html { redirect_to boards_path, notice: 'Board was successfully created.' }
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new }

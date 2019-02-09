@@ -1,0 +1,60 @@
+<section>
+    <div class="col-md-12 no-padding">
+        <div class="filter-content overflow-hidden">
+          <ul class="portfolio-grid portfolio-metro-grid work-3col hover-option10 gutter-medium lightbox-portfolio">
+            <li class="grid-sizer"></li>
+            <% @boards.each do |board|%>
+              <li class="grid-item <%= board.category %> wow zoomIn" data-wow-delay="0.2s">
+                <figure>
+                  <div class="portfolio-img bg-black"><img src="<%= image_path(board.image) %>" alt=""/></div>
+                  <figcaption>
+                    <div class="board-thumbnail-hover">
+                       <div class="portfolio-hover-content">
+                          <span class="line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block"><%= board.category %></span>
+                        </div>
+                        <div class="portfolio-123 like-container<%=board.id%>">
+                          <% if current_user.is_like?(board) %>
+                            <a id="result" class="gallery-link heart-on" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                              <i class="fas fa-heart" aria-hidden="true"></i>
+                            </a>
+                          <% else %>
+                            <a id="result" class="gallery-link heart-off" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                              <i class="fas fa-heart" aria-hidden="true"></i>
+                            </a>
+                          <% end %>   
+                          <div id="like-count" class="gallery-link line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                            <%= board.likes.count %>
+                          </div>               
+                        </div>
+                        <div class="portfolio-hover-content">
+                          @<%=board.user.nickname%>
+                        </div>
+                      </div>
+                  </figcaption>
+                </figure>
+              </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(".heart-off").click(function () {
+  $(this).removeClass("heart-off");
+  $(this).addClass("heart-on");
+})
+$(".heart-on").click(function (){
+  $(this).removeClass("heart-on");
+  $(this).addClass("heart-off");
+})
+</script>
+<style>
+#reffsult{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

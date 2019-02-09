@@ -1,0 +1,34 @@
+<section class="no-padding wow fadeIn">
+  <div class="container-fluid no-padding">
+    <div class="row no-margin">
+      <div class="filter-content overflow-hidden">
+        <ul class="portfolio-grid work-4col hover-option2">
+          <li class="grid-sizer"></li>
+          <!-- start portfolio item -->
+          <% @boards.each do |board| %>
+          <li class="grid-item wow fadeInUp">
+            <a href="single-project-page-01.html">
+              <figure>
+                <div class="portfolio-img bg-deep-pink"><img src="<%= board.image.thumb.url %>" alt=""/></div>
+                <figcaption>
+                  <div class="portfolio-hover-main text-left">
+                    <div class="portfolio-hover-box vertical-align-bottom">
+                      <div class="portfolio-hover-content position-relative last-paragraph-no-margin">
+                        <div class="bg-black margin-six-bottom separator-line-horrizontal-medium-light2"></div>
+                          <a href="<%= board.user.url%>" class="line-height-normal alt-font text-white text-uppercase margin-one-half-bottom display-block font-weight-600">@<%=board.user.nickname%></a>
+      
+                          <i style="color:#fff;" class="fas fa-heart" aria-hidden="true"></i>
+                          <span class="text-white"><%= board.likes.count %></span>
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

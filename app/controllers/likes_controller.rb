@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   def like_toggle
+    @board = Board.find(params[:board_id])
     @like = Like.find_by(user_id: current_user.id, board_id: params[:board_id])
     if @like.nil?
       Like.create(user_id: current_user.id, board_id: params[:board_id])

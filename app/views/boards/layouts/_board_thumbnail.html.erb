@@ -12,13 +12,19 @@
                        <div class="portfolio-hover-content">
                           <span class="line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block"><%= board.category %></span>
                         </div>
-                        <div class="portfolio-icon">
-                          <a class="gallery-link" title="<%= board.user.nickname %>" href="<%= image_path(board.image) %>">
-                            <i id="test" class="fas fa-heart" aria-hidden="true"></i>
-                          </a>
-                          <a class="gallery-link" href="#">
-                            <i class="fas fa-bookmark" aria-hidden="true"></i>
-                          </a>
+                        <div class="portfolio-123 like-container<%=board.id%>">
+                          <% if current_user.is_like?(board) %>
+                            <a id="result" class="gallery-link heart-on" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                              <i class="fas fa-heart" aria-hidden="true"></i>
+                            </a>
+                          <% else %>
+                            <a id="result" class="gallery-link heart-off" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                              <i class="fas fa-heart" aria-hidden="true"></i>
+                            </a>
+                          <% end %>   
+                          <div id="like-count" class="gallery-link line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=board.id%>/like">
+                            <%= board.likes.count %>
+                          </div>               
                         </div>
                         <div class="portfolio-hover-content">
                           @<%=board.user.nickname%>
@@ -33,13 +39,22 @@
       </div>
     </div>
 </section>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(".heart-off").click(function () {
+  $(this).removeClass("heart-off");
+  $(this).addClass("heart-on");
+})
+$(".heart-on").click(function (){
+  $(this).removeClass("heart-on");
+  $(this).addClass("heart-off");
+})
+</script>
 <style>
-.board-thumbnail-hover {
+#reffsult{
   display: flex;
-  height: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding: 5%;
 }
 </style>

@@ -2,7 +2,8 @@
 <a href="/mypage">뒤로가기</a> <hr>
 
 <% @boards.each do |board| %>
- <%= image_tag (board.image), :height => '100px', :width => '100px'  %> <br>
+ <%= image_tag (board.image), :width => '15%'  %>
+ <a href="/my_board/delete">삭제하기 </a> <br>
  <%=board.image%> <hr>
 <% end %>
 <a href="/mypage">뒤로가기</a> <br>

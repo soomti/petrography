@@ -2,6 +2,8 @@
   <div class="container col-md-6 center-col">
     <div class="row">
       <%= render '/devise/layouts/devise_title'%>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
     <div class="devise-form col-md-10 center-col">
       <%= render @path %>

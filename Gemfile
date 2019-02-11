@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# use jquery
+gem 'jquery-rails'
 # image upload
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'

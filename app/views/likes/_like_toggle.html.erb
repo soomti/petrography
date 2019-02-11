@@ -1,7 +1,15 @@
   <% if @like %>
-    좋아요 취소
-    <%= @likes %>
+    <a id="result" class="gallery-link heart-off" data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=@board.id%>/like">
+      <i class="fas fa-heart" style="coolor:#fff;" aria-hidden="true"></i>
+    </a>
+    <div id="like-count" class="gallery-link line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block" data-remote="true" rel="nofollow" data-method="post">
+     <%= @board.likes.count %>
+    </div> 
   <% else %>
-    좋아요
-    <%= @likes %>
+    <a id="result" class="gallery-link heart-on"data-remote="true" rel="nofollow" data-method="post" href="/boards/<%=@board.id%>/like">
+      <i class="fas fa-heart" style="color:#ff214f;" aria-hidden="true"></i>
+    </a>
+    <div id="like-count" class="gallery-link line-height-normal alt-font text-white text-uppercase margin-5px-bottom display-block" data-remote="true" rel="nofollow" data-method="post">
+      <%= @board.likes.count %>
+    </div> 
   <% end %>

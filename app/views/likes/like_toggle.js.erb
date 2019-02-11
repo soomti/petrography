@@ -1,3 +1,1 @@
-$('#result').html(
-  "<%= escape_javascript(render 'like_toggle') %>"
-)
+$('.like-container<%=@board.id%>')[0].innerHTML= "<%= escape_javascript(render 'like_toggle') %>"

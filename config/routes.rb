@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
 
-<<<<<<< HEAD
   get '/mypage' => 'mypages#index'
   get '/my_board' => 'mypages#my_board'
   get '/my_board/delete' => 'mypages#my_board_delete'
@@ -13,10 +12,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { registrations: 'user/registrations', sessions: 'user/sessions', passwords: 'user/passwords' }
-=======
-  resources :boards
-  devise_for :users
->>>>>>> parent of aad0ee7... Revert "Feature/add template"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
